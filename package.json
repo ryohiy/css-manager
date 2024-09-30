@@ -1,0 +1,30 @@
+{
+  "name": "css-manager",
+  "version": "0.1.15",
+  "main": "index.js",
+  "bin": {
+    "csx": "./bin/csx.js"
+  },
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc",
+    "start": "node ./bin/csx.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "camelcase": "6.3.0",
+    "commander": "12.1.0",
+    "glob": "11.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "11.0.4",
+    "@types/node": "22.7.4",
+    "fs-extra": "11.2.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.2",
+    "vitest": "2.1.1"
+  }
+}
