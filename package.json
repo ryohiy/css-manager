@@ -1,13 +1,13 @@
 {
   "name": "css-manager",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "main": "index.js",
   "bin": {
     "csx": "./bin/csx.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryohiy/css-manager.git",
+    "url": "https://github.com/ryohiy/css-manager.git"
   },
   "scripts": {
     "test": "vitest",
