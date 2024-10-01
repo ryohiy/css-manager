@@ -6,7 +6,7 @@ import camelCase from 'camelcase';
 export function mg(options: { module?: string }) {
     const targetFiles = typeof options.module === 'string'
         ? [options.module]
-        : glob.sync('**/*.{css,sass,scss}', { ignore: '**/node_modules/**' });
+        : glob.sync('**/*.{css,sass,scss}', { ignore: ['**/node_modules/**', '**/*.module.*']});
 
     targetFiles.forEach((file) => {
         console.log(`Processing: ${file}`);
