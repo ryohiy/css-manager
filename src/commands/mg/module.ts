@@ -65,6 +65,18 @@ export function module( module?:string ) {
                         }
                     );
                     codeContent = codeContent.replace(
+                        new RegExp(`(?:\{)(?<name>${name})(?:\s)`, 'g'),
+                        (match, name, offset, string, groups) => {
+                            return `{styles.${camelCase(groups.name)}}`;
+                        }
+                    );
+                    codeContent = codeContent.replace(
+                        new RegExp(`(?:^|\s)(?<name>${name})(?:\})`, 'g'),
+                        (match, name, offset, string, groups) => {
+                            return `styles.${camelCase(groups.name)}`;
+                        }
+                    );
+                    codeContent = codeContent.replace(
                         new RegExp(`(?:^|\s)(?<name>${name})(?:\s)`, 'g'),
                         (match, name, offset, string, groups) => {
                             return `styles.${camelCase(groups.name)}`;
