@@ -2,11 +2,14 @@ import {glob} from "glob";
 import path from "path";
 import fs from "fs-extra";
 import camelCase from "camelcase";
+import { loadConfig } from '../../config';
 
 export function module( module?:string ) {
+    const { exclude = [] } = loadConfig();
+    const ignorePatterns = ['**/node_modules/**', '**/*.module.*', ...exclude];
     const targetCssFiles = typeof module === 'string'
         ? [module]
-        : glob.sync('**/*.{css,sass,scss}', { ignore: ['**/node_modules/**', '**/*.module.*']});
+        : glob.sync('**/*.{css,sass,scss}', { ignore: ignorePatterns});
 
     targetCssFiles.forEach((file) => {
         console.log(`Processing: ${file}`);
